@@ -13,7 +13,6 @@ public class ClientService {
     ClientRepo clientRepo;
 
     public Client getClientByID(String id){
-        Client client = clientRepo.findClientsById(Integer.parseUnsignedInt(id)).get(0);
-        return client;
+        return clientRepo.findClientsById(Integer.parseUnsignedInt(id)).get(0);
     }
 }
