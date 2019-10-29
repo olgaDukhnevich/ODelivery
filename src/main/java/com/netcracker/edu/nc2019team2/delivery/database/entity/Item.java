@@ -1,24 +1,13 @@
 package com.netcracker.edu.nc2019team2.delivery.database.entity;
 
-import org.springframework.data.annotation.Id;
+import java.math.BigDecimal;
 
-public class Item {
-    @Id
-    private long id;
+public class Item extends Entity {
     private int calories;
-    private float price;
-    private String title;
+    private BigDecimal price;
     private String composition;
     private float weight;
     private boolean isSpicy;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public int getCalories() {
         return calories;
@@ -26,22 +15,6 @@ public class Item {
 
     public void setCalories(int calories) {
         this.calories = calories;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getComposition() {
@@ -66,5 +39,13 @@ public class Item {
 
     public void setSpicy(boolean spicy) {
         isSpicy = spicy;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }
