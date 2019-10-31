@@ -14,4 +14,9 @@ public interface ClientRepo extends CrudRepository<Client, Long> {
     @Query("select id, name from client where id=:id")
     List<Client> findClientsById(@Param("id") long id);
 
+    @Query("select id, name from client where rownum>=:min AND rownum<=:max")
+    List<Client> findClientsBetween(@Param("min") long min,@Param("max") long max);
+
+    @Query("delete client where id=:id")
+    void deleteClientById(@Param("id") long id);
 }
